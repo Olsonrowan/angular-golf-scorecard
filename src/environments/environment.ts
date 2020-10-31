@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyC6CmCxjYoDwkzYpNW4p_LKrGpD0wz6L14",
+    authDomain: "golf-score-card-3bcde.firebaseapp.com",
+    databaseURL: "https://golf-score-card-3bcde.firebaseio.com",
+    projectId: "golf-score-card-3bcde",
+    storageBucket: "golf-score-card-3bcde.appspot.com",
+    messagingSenderId: "607595202766",
+    appId: "1:607595202766:web:c4f8338964213a9ecfa89f"
+  },
 };
 
 /*

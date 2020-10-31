@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "golf-score-card-3bcde": {
+      "hosting": {
+        "golf-scorecard": [
+          "golf-score-card-3bcde"
+        ]
+      }
+    }
+  }
+}

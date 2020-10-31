@@ -1,4 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.scorecardDisplay{
+  overflow-x: auto;
+}
+.coursePos{
+margin-top: 5px;
+display: flex;
+justify-content: center;
+}
+.courseHead{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+
+}
+.selectTee{
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+.radioPosition{
+  margin: 10px
+}
+
+.addplayer{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+}
+.thumbnail{
+  height: 240px;
+  width: 270px;
+}
+
+.yards {
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: #6c7ae0;
+}
+
+.yardsHeader{
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: #6c7ae0;
+}
+
+.divider {
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid #dddddd;
+}
+
+.holesHeader{
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: rgb(228, 218, 179);
+}
+.holes{
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: rgb(228, 218, 179);
+}
+
+.handicap{
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: rgb(228, 218, 179);
+}
+
+.handiHeader{
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: rgb(228, 218, 179);
+}
+
+.playerScore{
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.playerScoreTotal{
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.player{
+  color: black;
+  font-size: 1.25em;
+  padding: 1em;
+  border: 1px solid black;
+  background-color: white;
+}

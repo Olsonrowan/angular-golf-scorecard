@@ -22,7 +22,7 @@ export class CoursesComponent implements OnInit {
     });
   }
 
-  goToCourse(courseId: number): void {
+  goToCourse(courseId: string): void {
     this.router.navigate(['scoreboard/courseId', {id: courseId}]);
 }
 

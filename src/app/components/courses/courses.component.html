@@ -1,9 +1,11 @@
 <div>
     <mat-card>
         <mat-list>
-            <mat-list-item  *ngFor="let course of courses" [courses]="courses" (click)="goToCourse(course.id)">
+          <h1> Select your course!</h1>
+          <mat-divider></mat-divider>
+            <mat-list-item  *ngFor="let course of courses" (click)="goToCourse(course.id)">
                 {{course.name}}
             </mat-list-item >
         </mat-list>
-    </mat-card>    
+    </mat-card>
 </div>

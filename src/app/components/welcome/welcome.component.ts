@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from 'src/app/services/courses.service';
+
 
 @Component({
   selector: 'app-welcome',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  courseOne = []
+  courseHoles =  []
+  test: any
+
+  constructor(
+    private courseService: CoursesService
+  ) { }
 
   ngOnInit(): void {
+
+
   }
 
 }

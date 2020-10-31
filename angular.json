@@ -123,6 +123,10 @@
               "devServerTarget": "golf-scorecard:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

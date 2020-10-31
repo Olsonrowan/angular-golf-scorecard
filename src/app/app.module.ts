@@ -11,6 +11,13 @@ import { MaterialModule } from './modules/material.module';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment'
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -19,14 +26,17 @@ import { HttpClientModule } from '@angular/common/http';
     ScoreboardComponent,
     TopNavbarComponent,
     WelcomeComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule, 
-    HttpClientModule
+    MaterialModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

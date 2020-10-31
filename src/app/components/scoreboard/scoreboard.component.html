@@ -1,5 +1,130 @@
 <div class="main-container">
-    <div class="cards">
-        <h2>{{$courses.name}}</h2>
+
+  <div class="coursePos">
+    <div class="courseHead">
+        <img class="thumbnail "src='{{image}}'>
+        <h1>{{name}}</h1>
+
     </div>
+  </div>
+
+  <div>
+      <mat-button-toggle-group>
+        <mat-button-toggle *ngFor="let tee of tees">
+          {{tee}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+
+
+    <form class="form addplayer">
+      <mat-form-field style="width:20vw">
+        <mat-label > Add Player:</mat-label>
+        <input matInput [formControl]="playerFormControl" type="text" placeholder="Ex. First Last">
+        <mat-error *ngIf="playerFormControl.hasError('duplicate')">Player Already Exists</mat-error>
+      </mat-form-field>
+      <button mat-icon-button color="primary" class="submit" [disabled]="playerFormControl.invalid" (click)="addPlayer()">
+        <mat-icon>add</mat-icon>
+      </button>
+      </form>
+    </div>
+
+    <div class="scorecardDisplay">
+      <thead class="Theader">
+
+        <td class="holesHeader">Holes</td>
+        <td class="holes" *ngFor="let holes of course9Holes">{{holes}}</td>
+        <td class="holes">OUT</td>
+        <td class="divider"> </td>
+        <td class="holes" *ngFor="let holes of course18Holes">{{holes}}</td>
+        <td class="holes">IN</td>
+        <td class="holes">TOTAL</td>
+
+
+
+
+      </thead>
+
+
+      <thead class="Theader">
+
+        <td class="yardsHeader">Yards</td>
+        <td class="yards" *ngFor="let yards of course9Yards">{{yards}}</td>
+        <td class="yards">{{front9TotalYards}}</td>
+        <td class="divider"> </td>
+        <td class="yards" *ngFor="let yards of course18Yards">{{yards}}</td>
+        <td class="yards">{{back9TotalYards}}</td>
+        <td class="yards">{{totalY}}</td>
+
+
+
+      </thead>
+
+
+      <thead class="Theader">
+
+        <td class="handiHeader">Handicap</td>
+        <td class="handicap" *ngFor="let hcp of handicap9">{{hcp}}</td>
+        <td class="handicap"> </td>
+        <td class="divider"> </td>
+
+        <td class="handicap" *ngFor="let hcp of handicap18">{{hcp}}</td>
+        <td class="handicap"> </td>
+        <td class="handicap"> </td>
+
+
+      </thead>
+
+      <thead class="Theader">
+
+        <td class="yardsHeader">Par</td>
+        <td class="yards" *ngFor="let par of course9Par">{{par}}</td>
+        <td class="yards">{{front9TotalPar}}</td>
+
+        <td class="divider"> </td>
+        <td class="yards" *ngFor="let par of course9Par">{{par}}</td>
+        <td class="yards">{{back9TotalPar}}</td>
+        <td class="yards">{{totalP}}</td>
+
+
+
+      </thead>
+
+      <tr *ngFor="let player of players; let i = index">
+        <td class="player">{{player.name}}</td>
+        <td *ngFor="let hole of back9">
+          <input
+            type="number"
+            class="playerScore"
+            max="99"
+            min="0"
+            [(ngModel)]="player[hole]"
+          >
+        </td>
+        <td class="playerScoreTotal">{{getFrontTotal(player)}}</td>
+        <td class="divider"> </td>
+        <td class="firstPlayer" *ngFor="let hole of front9">
+          <input
+          type="number"
+          class="playerScore"
+          max="99"
+          min="0"
+          [id]="hole"
+          [(ngModel)]="player[hole]"
+        >
+        </td>
+        <td class="playerScoreTotal">{{getBackTotal(player)}}</td>
+        <td class="playerScoreTotal">{{getTotal(player)}}</td>
+        <td class="button">
+          <button mat-icon-button (click)="deletePlayer(player, i)">
+              <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+
 </div>
+<button mat-raised-button color="primary" (click)="updateData()">Save game</button>
+
+</div>
+
+
+
