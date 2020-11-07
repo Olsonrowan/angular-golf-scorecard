@@ -13,7 +13,7 @@ import { FormControl, ValidatorFn, AbstractControl } from '@angular/forms';
 export class ScoreboardComponent implements OnInit {
   // courses: Courses[]
   tees: string[] = ["Pro", "Champion", "Men", "Women"]
-	tee: string = ""
+  tee: string = ""
   name: string;
   image: any
   courseInfo: any
@@ -54,10 +54,12 @@ export class ScoreboardComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
+
     this.courseService.getCourseById(id).subscribe(data => {
       this.image = data.thumbnail
       this.name = data.name
       this.courseInfo = data.holes
+
 
       for(let i = 0; i <= 8; i++ ) {
         this.course9Yards.push(this.courseInfo[i].teeBoxes[0].yards)
@@ -120,6 +122,10 @@ export class ScoreboardComponent implements OnInit {
       this.playerFormControl.setValue('');
     }
   }
+
+
+
+
   getFrontTotal(player: Players): number {
     // for(let i = 1;  i => 9; i++){
     //   return player[i].reduce(function(a, b){ return a + b; }, 0);
@@ -140,6 +146,10 @@ export class ScoreboardComponent implements OnInit {
     player[6] + player[7] + player[8] + player[9] + player[10] + player[11] +
     player[12] + player[13] + player[14] + player[15] + player[16] + player[17] + player[18];
   }
+
+
+
+
 
   nameValidator(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {

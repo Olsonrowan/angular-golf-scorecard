@@ -9,11 +9,15 @@
   </div>
 
   <div>
-      <mat-button-toggle-group>
-        <mat-button-toggle *ngFor="let tee of tees">
-          {{tee}}
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+    <div class="teeSelect">
+      <mat-form-field class="form">
+        <mat-label>Tee Type</mat-label>
+        <mat-select [(ngModel)]="tee">
+          <mat-option *ngFor="let tee of tees" [value]="tee">{{ tee }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
 
 
     <form class="form addplayer">

@@ -10,6 +10,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -29,7 +31,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSelectModule,
+
 
 
 
@@ -44,7 +48,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSelectModule
 
 
   ]
